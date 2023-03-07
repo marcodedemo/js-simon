@@ -14,6 +14,7 @@
 let randomNumbers = [];
 
 // creo un array contente gli elementi creati in pagina
+// variabile GLOBALE
 let createdDivElement = [];
 
 // dichiaro la variabile corrispondente al contenitore dei numeri da stampare nel DOM
@@ -40,6 +41,9 @@ let rightNumberCounter = 0;
 // creo un array in cui inserire i numeri inseriti dall'utente
 let userNumbers = [];
 
+// dichiaro la variabile corrispondente al bottone di reset
+let resetButtonElement = document.getElementById("reset-btn");
+
 
 
 // creo un timeout che esegue la funzione removeNumbers dopo 10 secondi
@@ -47,7 +51,6 @@ setTimeout(removeNumbersAndShowInputs, 11000);
 
 // creao un intervallo che richiama una funzione di countdown ogni secondo 
 let count = setInterval(countdown, 1000);
-
 
 
 for (let i = 0; i < 5; i++) {
@@ -79,6 +82,9 @@ for (let i = 0; i < 5; i++) {
 
 // evento click del pulsante check
 numberCheckElement.addEventListener("click", function(){
+
+    // rendo visibile il bottone di reset
+    resetButtonElement.style.display = "block";
 
     // ciclo di controllo dei valori randomici generati e quelli inseriti dall'utente
     for (let u = 0; u < 5; u++) {
@@ -117,11 +123,12 @@ numberCheckElement.addEventListener("click", function(){
         resultMessageElement.innerHTML = "Hai inserito " + rightNumberCounter + " numeri corretti: <br> i numeri generati sono " + randomNumbers + "<br> i numeri inseriti sono " + userNumbers;
     }
     
+
+
 })
 
 
-
-
+resetButtonElement.addEventListener("click", refreshPage);
 
 
 
@@ -129,6 +136,7 @@ numberCheckElement.addEventListener("click", function(){
 /* -------------------------------------------------------------------------- */
 /*                                  functions                                 */
 /* -------------------------------------------------------------------------- */
+
 
 
 /**
@@ -184,4 +192,11 @@ function countdown (){
     }
     
     secondsLeft-- ;
+}
+
+
+// ricarica la pagina
+function refreshPage (){
+
+    window.location.reload();
 }
