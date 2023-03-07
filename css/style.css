@@ -4,3 +4,101 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #005C53;
+
+}
+
+h1{
+    text-align: center;
+    padding-top: 50px;
+    color: #9FC131;
+}
+
+/* numbers container */
+#numbers-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 20px 0;
+}
+
+#numbers-container .number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 50px;
+    background-color: #042940;
+    border: 1px solid rgba(255, 255, 255, 0.428);
+    color: #DBF227;
+
+}
+
+/* inputs container */
+
+#inputs-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#inputs-container .input{
+    display: none;
+
+    width: 100px;
+    height: 30px;
+
+    background-color: #042940;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.428);
+    color: white;
+
+    text-align: center;
+
+}
+
+/* countdown */
+
+#counter{
+    text-align: center;
+    font-size: 2em;
+    color: white;
+}
+/* submit button */
+
+#submit{
+    display: flex;
+    justify-content: center;
+
+    padding-top: 20px;
+
+}
+
+#submit #submit-btn{
+    display:none;
+
+    background-color: #DBF227;
+    color: #042940;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+
+/* result message */
+
+#message{
+    text-align: center;
+    color: white;
+
+    padding-top: 20px;
+
+    line-height: 1.8em;
+}
